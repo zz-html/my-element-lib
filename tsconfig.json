@@ -1,17 +1,17 @@
 {
   "compilerOptions": {
-    "target": "ESNext",
-    "module": "ESNext",
-    "moduleResolution": "Node",
-    "strict": true,
-    "jsx": "preserve",
-    "allowSyntheticDefaultImports": true,
-    "esModuleInterop": true,
-    "skipLibCheck": true,
+    "target": "ESNext", // 决定生成的 JS 特性（低版本浏览器要用 ES5，现代用 ESNext）
+    "module": "ESNext", // 决定打包工具使用哪种模块系统（前端用 ESNext，Node.js 传统用 commonjs）
+    "moduleResolution": "Node", // 模块解析方式，通常写 "node"
+    "strict": true, // 开启所有严格模式
+    "jsx": "preserve", // 保留 JSX 语法（交给 Vue/React 插件处理）
+    "allowSyntheticDefaultImports": true, // 没有 default 也能写 import x from 'xx'
+    "esModuleInterop": true, // 允许 import 默认导出 CommonJS 模块
+    "skipLibCheck": true, // 跳过第三方库的类型检查，编译更快
 
-    "declaration": true,
-    "declarationDir": "dist/types",
-    "emitDeclarationOnly": true,
+    "declaration": true, // 生成 .d.ts 类型声明文件，在打包库时必须开，否则别人用你的库没有类型提示。
+    "declarationDir": "dist/types", // 统一把 .d.ts 输出到 dist/types
+    "emitDeclarationOnly": true, // 只生成类型文件，不会生成 js
 
     "baseUrl": ".",
     "paths": {
